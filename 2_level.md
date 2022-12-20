@@ -154,3 +154,41 @@ d=int(input())
 e=(a**b)+(c**d)
 print(e)
 ```
+
+---
+
+### Question 4
+
+> 145 is a curious number, as 1! + 4! + 5! = 1 + 24 + 120 = 145.
+> Find the sum of all numbers which are equal to the sum of the factorial of their digits given a range N. Try solving without lists
+
+<ins>Answer:</ins>
+
+```python
+import math
+
+def check_sum(number):
+    list_digits = list(str(number))
+    check_sum = sum([math.factorial(int(digit)) for digit in list_digits])
+    return check_sum == number
+
+def final_sum(counter_min=3, counter_max=99999000):
+    """Find the sum of all the numbers."""
+    final_sum = 0
+    for counter in range(counter_min, counter_max):
+        if check_sum(counter):
+             final_sum += counter
+    return final_sum
+
+if __name__ == '__main__':
+    print(final_sum())
+
+```
+
+---
+
+---
+
+Now after these questions , we can now move to the next level .Because it will be clear that you have a solid understanding of basic datatypes like strings and integers.
+
+<button name="button" onclick="1_level.md">Next Level</button>
