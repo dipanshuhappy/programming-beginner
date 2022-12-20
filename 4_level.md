@@ -1,4 +1,4 @@
-# Level 3
+# Level 4
 
 ## <ins>A quick tour on if and else </ins>
 
@@ -211,3 +211,7 @@ Note:Many languages offer a feature called inline if statments and also called t
 #### C++,Java
 
 > string a = x%2==0?"Even":"Old";
+
+Now after these questions , we can now move to the next level .Because we have covered an overall concept of if and else statements.
+
+<button name="button" onclick="1_level.md">Next Level</button>

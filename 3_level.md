@@ -198,3 +198,5 @@ if __name__=='__main__':
 ---
 
 Now after these questions , we can now move to the next level .Because it will be clear that you have a solid understanding of datatypes like lists and tuples.
+
+<button name="button" onclick="1_level.md">Next Level</button>
