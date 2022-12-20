@@ -129,3 +129,6 @@ def pop():
     else:
         return -1
 ```
+
+Now after these questions , we can now move to the next level .Because we have some basic knowledge on stack and queues .
+<button name="button" onclick="1_level.md">Next Level</button>
