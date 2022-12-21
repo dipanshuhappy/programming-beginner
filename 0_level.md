@@ -36,6 +36,13 @@ Now we need to understand how an computing devices allows us to solve problems t
 
 ---
 
+### Whats the difference betweeen compile and interpreted languages
+
+| Compiled Language                                                                                                 | Intepreted Language                                                                                                                                                                          |
+| ----------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| A compiled language is a programming language whose implementations are typically compilers and not interpreters. | An interpreted language is a programming language whose implementations execute instructions directly and freely, without previously compiling a program into machine-language instructions. |
+| The code of compiled language can be executed directly by the computer’s CPU.                                     | A program written in an interpreted language is not compiled, it is interpreted.                                                                                                             |
+
 ---
 
 Now after these questions , we can now move to the next level because now you have an idea on what you can expect in this journey.

@@ -88,6 +88,6 @@ while s>9:
 print('Numerology number is:',s)
 ```
 
-Now after these questions , we can now move to the next level .Because we have covered an overall concept of loop statements.
+Now after these questions , we can now move to the next level .Because we have covered an overall concept of loop statements. Loops will be used everywhere in your coding journeys from traversing lists to accepting number of test cases .
 
 <button name="button" onclick="1_level.md">Next Level</button>

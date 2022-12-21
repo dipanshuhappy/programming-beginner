@@ -92,6 +92,6 @@ b = set(map(int, input().split()))
 print(sum([1 if c in a else -1 if c in b else 0 for c in n]))
 ```
 
-Now after these questions , we can now move to the next level .Because we have covered an overall concept of sets and dictionaries.
+Now after these questions , we can now move to the next level .Because we have covered an overall concept of sets and dictionaries. Dictionaries are often major key data type to most DSA questions . So you must master this concept before you can move ahead.
 
 <button name="button" onclick="1_level.md">Next Level</button>

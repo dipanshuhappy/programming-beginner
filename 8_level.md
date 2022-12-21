@@ -130,5 +130,5 @@ def pop():
         return -1
 ```
 
-Now after these questions , we can now move to the next level .Because we have some basic knowledge on stack and queues .
+Now after these questions , we can now move to the next level .Because we have some basic knowledge on stack and queues .Not only that but stacks and queues are also asked in objectives and interviews . This concept of stacks and queues isn't hard to understand . But may be difficult to understand where to use in a problem . We shall see more questions where stacks and queues are used in the next levels.
 <button name="button" onclick="1_level.md">Next Level</button>
