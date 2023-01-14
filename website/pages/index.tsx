@@ -1,10 +1,12 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from '@next/font/google'
-import styles from '../styles/Home.module.css'
+import Head from "next/head";
+import Image from "next/image";
+import { Inter } from "@next/font/google";
+import styles from "../styles/Home.module.css";
+import { getAllMarkdownFileRecursively } from "../src/fileUtils";
 
-const inter = Inter({ subsets: ['latin'] })
+const inter = Inter({ subsets: ["latin"] });
 
+console.log("ksdfjl");
 export default function Home() {
   return (
     <>
@@ -26,7 +28,7 @@ export default function Home() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              By{' '}
+              By{" "}
               <Image
                 src="/vercel.svg"
                 alt="Vercel Logo"
@@ -119,5 +121,16 @@ export default function Home() {
         </div>
       </main>
     </>
-  )
+  );
+}
+export async function getStaticProps() {
+  console.log(
+    getAllMarkdownFileRecursively(
+      "C:\\Users\\DPS\\Desktop\\projects\\questions-levels",
+      []
+    )
+  );
+  return {
+    props: {}, // will be passed to the page component as props
+  };
 }
