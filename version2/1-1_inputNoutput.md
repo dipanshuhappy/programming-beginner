@@ -221,7 +221,7 @@ Output:
 
 # Question 7:
 
-Write a Python program that prompts the user to enter a word, and then prints the word with each letter reversed.
+Write a Python program that prompts the user to enter a number, and then prints the binary of that number.
 
 ## Solution
 
@@ -243,15 +243,15 @@ Test case 1:
 
 Input:
 
-> hello
+> 2
 
 Output:
 
-> olleh
+> 10
 
 # Question 8:
 
-Write a Python program that prompts the user to enter a word, and then prints the word with each letter reversed.
+Write a Python program that prompts the user to enter a list of integers separated by commas , and then prints sorted list.
 
 ## Solution
 
