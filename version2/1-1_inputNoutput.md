@@ -221,7 +221,7 @@ Output:
 
 # Question 7:
 
-Write a Python program that prompts the user to enter a word, and then prints the word with each letter reversed.
+Write a Python program that prompts the user to enter a number, and then prints the binary of that number.
 
 ## Solution
 
@@ -243,15 +243,15 @@ Test case 1:
 
 Input:
 
-> hello
+> 2
 
 Output:
 
-> olleh
+> 10
 
 # Question 8:
 
-Write a Python program that prompts the user to enter a word, and then prints the word with each letter reversed.
+Write a Python program that prompts the user to enter a list of integers separated by commas , and then prints sorted list.
 
 ## Solution
 
@@ -273,7 +273,7 @@ print(input("Enter a list of integers, separated by commas: ") == "10,20,5,15,30
 
 # Question 9:
 
-Write a Python program that prompts the user to enter a word, and then prints the word with each letter reversed.
+Write a Python program that prompts the user to enter a list of integers separated by commas, and then prints the product of each integers.
 
 ```python
 # Solution
@@ -316,7 +316,7 @@ print(input("Enter a list of numbers, separated by commas: ") == "10,20,30,40,50
 
 # Question 9:
 
-Write a Python program that prompts the user to enter a word, and then prints the word with each letter reversed.
+Write a Python program that prompts the user to enter a list of numbers separated by commas and then prints the sum of the integers.
 
 ```python
 # Solution
@@ -334,8 +334,8 @@ print(product)
 
 ```python
 # Test cases
-print(input("Enter a list of numbers, separated by commas: ") == "1,2,3,4,5") # Output: 120
-print(input("Enter a list of numbers, separated by commas: ") == "10,20,30,40,50") # Output: 12000000
+print(input("Enter a list of numbers, separated by commas: ") == "1,2,3,4,5") # Output: 15
+print(input("Enter a list of numbers, separated by commas: ") == "1,2,3,4,5,6") # Output: 16
 ```
 
 # Question 10:
