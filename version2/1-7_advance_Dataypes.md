@@ -467,20 +467,6 @@ print(count_items([1, 2, 3, 1, 2, 3, 1])) # {1: 3, 2: 2, 3: 2}
 print(count_items(["apple", "banana", "cherry", "apple"])) # {'apple': 2, 'banana': 1, 'cherry': 1}
 ```
 
-# Question 10:
-
-How can I count the occurrences of each item in a list, and store them in a dictionary?
-
-```
-def count_items(lst):
-    count_dict = {}
-    for item in lst:
-        count_dict[item] = lst.count(item)
-    return count_dict
-print(count_items([1, 2, 3, 1, 2, 3, 1])) # {1: 3, 2: 2, 3: 2}
-print(count_items(["apple", "banana", "cherry", "apple"])) # {'apple': 2, 'banana': 1, 'cherry': 1}
-```
-
 # Question 11:
 
 Given an unsorted array that contains even number of occurrences for all numbers except two numbers. Find the two numbers which have odd occurrences
@@ -593,7 +579,7 @@ Test case 2:
 
 <br><br>
 
-# Question 22:
+# Question 13:
 
 Take Matrix input from user in Python with specified number of rows and columns and print the Matrix
 
@@ -638,7 +624,7 @@ Test Case:
 
 <br><br>
 
-# Question 13:
+# Question 14:
 
 Print a given matrix in its spiral form
 
@@ -749,354 +735,122 @@ Test Case 2:
 
 <br><br>
 
-# Question 25:
+# Question 16:
 
-Write a python program to print a matrix in counter clock wise spiral form.
+Write a Python function that takes a list of tuples and returns a new list containing only the tuples whose second element is a prime number.
 
 ```python
 #solution
-R = 4
-C = 4
+def prime_tuples(lst):
+    def is_prime(n):
+        if n < 2:
+            return False
+        for i in range(2, int(n ** 0.5) + 1):
+            if n % i == 0:
+                return False
+        return True
 
-def counterClockspiralPrint(m, n, arr) :
-    k = 0; l = 0
-
-    cnt = 0
-
-    total = m * n
-
-    while (k < m and l < n) :
-        if (cnt == total) :
-            break
-
-        for i in range(k, m) :
-            print(arr[i][l], end = " ")
-            cnt += 1
-
-        l += 1
-
-        if (cnt == total) :
-            break
-
-        for i in range (l, n) :
-            print( arr[m - 1][i], end = " ")
-            cnt += 1
-
-        m -= 1
-
-        if (cnt == total) :
-            break
-
-        if (k < m) :
-            for i in range(m - 1, k - 1, -1) :
-                print(arr[i][n - 1], end = " ")
-                cnt += 1
-            n -= 1
-
-        if (cnt == total) :
-            break
-
-        if (l < n) :
-            for i in range(n - 1, l - 1, -1) :
-                print( arr[k][i], end = " ")
-                cnt += 1
-
-            k += 1
-
-arr = [ [ 1, 2, 3, 4 ],
-        [ 5, 6, 7, 8 ],
-        [ 9, 10, 11, 12 ],
-        [ 13, 14, 15, 16 ] ]
-
-counterClockspiralPrint(R, C, arr)
+    return [(x, y) for x, y in lst if is_prime(y)]
 ```
 
-> Input: [ [ 1, 2, 3, 4 ],
+Testcase 1:\
+Input:
 
-        [ 5, 6, 7, 8 ],
-        [ 9, 10, 11, 12 ],
-        [ 13, 14, 15, 16 ] ]
+> print(prime_tuples([(1, 2), (3, 4), (5, 6), (7, 8), (9, 10)]))
 
-> Output: 1 5 9 13 14 15 16 12 8 4 3 2 6 10 11 7
+Output:
 
-<br> <br>
+> [(1, 2), (7, 8)]
 
-# Question 16:
+Testcase 2:\
+Input:
 
-Given a matrix of 2D array of n rows and m columns. Print this matrix in ZIG-ZAG fashion as shown in figure.
+> print(prime_tuples([(1, 2), (3, 5), (5, 7), (7, 11), (9, 13)]))
 
-![image](https://media.geeksforgeeks.org/wp-content/cdn-uploads/matrix_zag-zag.png)
+Output:
 
-```python
-matrix =[
-            [ 1, 2, 3,],
-            [ 4, 5, 6 ],
-            [ 7, 8, 9 ],
-        ]
-rows=3
-columns=3
-
-solution=[[] for i in range(rows+columns-1)]
-
-for i in range(rows):
-    for j in range(columns):
-        sum=i+j
-        if(sum%2 ==0):
-
-            #add at beginning
-            solution[sum].insert(0,matrix[i][j])
-        else:
-
-            #add at end of the list
-            solution[sum].append(matrix[i][j])
-
-
-# print the solution as it as
-for i in solution:
-    for j in i:
-        print(j,end=" ")
-```
-
-> Input: Matrix = [
-
-            [ 1, 2, 3,],
-            [ 4, 5, 6 ],
-            [ 7, 8, 9 ],
-        ]
-
-> Output: 1 2 4 7 5 3 6 8 9
-
-<br><br>
-
-# Question 27
-
-You have given an integer matrix with odd dimensions. Find the square of the diagonal elements on both sides.
-
-```python
-#Solution
-def diagonalsquare(mat, row, column) :
-
-    print ("Diagonal one : ", end = "")
-    for i in range(0, row) :
-        for j in range(0, column) :
-
-            if (i == j) :
-
-                print ("{} ".format(mat[i][j] *
-                                    mat[i][j]), end = "")
-
-    print (" \nDiagonal two : ", end = "")
-    for i in range(0, row) :
-        for j in range(0, column) :
-
-            if (i + j == column - 1) :
-
-                print ("{} ".format(mat[i][j] *
-                                    mat[i][j]), end = "")
-
-matrix = [[ 2, 5, 7 ],
-        [ 3, 7, 2 ],
-        [ 5, 6, 9 ]]
-diagonalsquare(matrix, 3, 3)
-```
-
-Test Case 1:
-
-> Input: matrix = [[ 2, 5, 7 ],
-
-        [ 3, 7, 2 ],
-        [ 5, 6, 9 ]]
-
-> Output = Diagonal one : 4 49 81  
-> Diagonal two : 49 49 25
-
-Test Case 2:
-
-> Input: matrix = [
-
-            [ 1, 2, 3,],
-            [ 4, 5, 6 ],
-            [ 7, 8, 9 ],
-        ]
-
-> Output:Diagonal one : 1 25 81  
-> Diagonal two : 9 25 49
-
-<br><br>
+> [(1, 2), (3, 5), (5, 7), (9, 13)]
 
 # Question 17:
 
-Write a python programm to add two matrices.
+Write a Python function that takes a list of tuples and returns a new list containing only the tuples whose second element is even.
 
 ```python
-#Solution
-
-def add_matrices(matrix1, matrix2):
-    # Check if the matrices are compatible for addition
-    if len(matrix1) != len(matrix2) or len(matrix1[0]) != len(matrix2[0]):
-        print("Error: Matrices are incompatible for addition")
-        return
-
-    # Add the matrices
-    result = []
-    for i in range(len(matrix1)):
-        result.append([])
-        for j in range(len(matrix1[0])):
-            result[i].append(matrix1[i][j] + matrix2[i][j])
-
-    return result
-
-# Test the function
-matrix1 = [[1, 2, 3],
-           [4, 5, 6]]
-matrix2 = [[7, 8, 9],
-           [10, 11, 12]]
-print(add_matrices(matrix1, matrix2))
+def even_tuples(lst):
+    return [(x, y) for x, y in lst if y % 2 == 0]
 ```
 
-Test case 1:
+Testcase 1:\
+Input:
 
-> Input: matrix1 = [[1, 2, 3],
+> print(even_tuples([(1, 2), (3, 4), (5, 6), (7, 8), (9, 10)]))
 
-           [4, 5, 6]]<br>
-        matrix2 = [[7, 8, 9],
-           [10, 11, 12]]
+Output:
 
-> Output = [[8, 10, 12], [14, 16, 18]]
+> [(1, 2), (3, 4), (5, 6), (7, 8), (9, 10)]
 
-Test case 2:
+Testcase 2:\
+Input:
 
-> Input: Matrix1= [[5, 7, 3],
+> print(even_tuples([(1, 2), (3, 5), (5, 7), (7, 11), (9, 13)]))
 
-           [28, 5, 9]]<br>
-        Matrix2= [[7, 23, 0],
-           [8, 64, 3]]
+Output:
 
-> Output: [[12, 30, 3], [36, 69, 12]]
-
-<br><br>
+> [(1, 2)]
 
 # Question 18:
 
-Write a python program to transpose a matrix.
-
-Transpose of a matrix is obtained by changing rows to columns and columns to rows. In other words, transpose of A[N][m] is obtained by changing A[i][j] to A[j][i].
+Write a Python function that takes a list of tuples and returns a new list containing only the tuples whose second element is a palindrome.
 
 ```python
-#Solution
-N = 4
-
-# This function stores
-# transpose of A[][] in B[][]
-
-
-def transpose(A, B):
-
-    for i in range(N):
-        for j in range(N):
-            B[i][j] = A[j][i]
-
-
-# Driver code
-if __name__ == '__main__':
-  A = [[1, 1, 1, 1],
-       [2, 2, 2, 2],
-       [3, 3, 3, 3],
-       [4, 4, 4, 4]]
-
-
-  # To store result
-  B = [[0 for x in range(N)] for y in range(N)]
-
-  # Function call
-  transpose(A, B)
-
-  print("Result matrix is")
-  for i in range(N):
-      for j in range(N):
-          print(B[i][j], " ", end='')
-      print()
+def palindrome_tuples(lst):
+    return [(x, y) for x, y in lst if y == y[::-1]]
 ```
 
-Test case 1:
+Testcase 1:\
+Input:
 
-> Input: Matrix=[[1, 1, 1, 1],
+> print(palindrome_tuples([(1, "abcd"), (2, "racecar"), (3, "deified"), (4, "madam"), (5, "python")]))
 
-       [2, 2, 2, 2],
-       [3, 3, 3, 3],
-       [4, 4, 4, 4]]
+Output:
 
-> Output: <br>
-> Result matrix is<br>
-> 1 2 3 4<br>
-> 1 2 3 4<br>
-> 1 2 3 4<br>
-> 1 2 3 4<br>
+> [(2, "racecar"), (4, "madam")]
 
-Test case 2:
+Testcase 2:\
+Input:
 
-> Input: Matrix=[[1, 2, 3, 4],
+> print(palindrome_tuples([(1, "abcd"), (2, "level"), (3, "deified"), (4, "civic"), (5, "python")]))
 
-       [5, 6, 7, 8],
-       [9, 10, 11, 12],
-       [13, 14, 15, 16]]
+Output:
 
-> Output:<br> Result matrix is<br>
-> 1 5 9 13<br>
-> 2 6 10 14<br>
-> 3 7 11 15<br>
-> 4 8 12 16
-
-<br><br>
+> [(2, "level"), (4, "civic")]
 
 # Question 19:
 
-Swap an array using Bubble Sort method. Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order.
+Write a Python function that takes a list of tuples and a value as input, and returns a new list containing only the tuples whose second element is greater than the given value.
 
 ```python
-#Solution
-def bubbleSort(arr):
-    n = len(arr)
-    swapped = False
-    for i in range(n-1):
-
-        for j in range(0, n-i-1):
-
-
-            if arr[j] > arr[j + 1]:
-                swapped = True
-                arr[j], arr[j + 1] = arr[j + 1], arr[j]
-
-        if not swapped:
-            return
-
-
-arr = [64, 34, 25, 12, 22, 11, 90]
-
-bubbleSort(arr)
-
-print("Sorted array is:")
-for i in range(len(arr)):
-    print("% d" % arr[i], end=" ")
+def greater_tuples(lst, value):
+    return [(x, y) for x, y in lst if y > value]
 ```
 
-Test Case 1:
+Testcase 1:\
+Input:
 
-> Input: arr=[64, 34, 25, 12, 22, 11, 90]
+> print(greater_tuples([(1, 2), (3, 4), (5, 6), (7,8), (9, 10)], 5))
 
-> Output: 11 12 22 25 34 64 90
+Output:
 
-Test Case 2:
+> [(5, 6), (7, 8), (9, 10)]
 
-> Input: arr= [0, 69, 7, 19, 56, 62, 99]
+Testcase 2:\
+Input:
 
-> Output: 0 7 19 56 62 69 99
+> print(greater_tuples([(1, 2), (3, 5), (5, 7), (7, 11), (9, 13)], 7))
 
-Test Case 3:
+Output:
 
-> Input: arr = [43, 6, 24, 78, 32, 8]
-
-> Output: 6 8 24 32 43 78
+> [(7, 11), (9, 13)]
 
 # Question 20:
 
